@@ -1,0 +1,104 @@
+
+ 
+  header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+  }
+  
+ 
+  .login {
+      margin-top: 10px;
+  }
+  
+  .login input[type="text"],
+  .login input[type="password"],
+  .login button {
+      margin: 5px;
+      padding: 8px;
+      border: none;
+  }
+  
+  .login button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+  }
+  
+  .login button:hover {
+      background-color: #45a049;
+  }
+  
+  
+  main {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+  }
+  
+  
+  .left-panel {
+      width: 20%;
+      background-color: #f2f2f2;
+      padding: 20px;
+  }
+  
+  .left-panel button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #ddd;
+      border: none;
+      cursor: pointer;
+  }
+  
+  .left-panel button:hover {
+      background-color: #bbb;
+  }
+  
+ 
+  .middle-panel {
+      width: 50%;
+      padding: 20px;
+  }
+  
+  .post {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+  }
+  
+  .post h2 {
+      margin-bottom: 5px;
+  }
+  
+  .post p {
+      margin-bottom: 10px;
+  }
+  
+  .post .author {
+      font-style: italic;
+  }
+  
+
+  .right-panel {
+      width: 20%;
+      background-color: #f2f2f2;
+      padding: 20px;
+  }
+  
+  .right-panel h2 {
+      margin-bottom: 10px;
+  }
+  
+  .right-panel ul {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .right-panel li {
+      margin-bottom: 5px;
+  }
