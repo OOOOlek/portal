@@ -1,0 +1,42 @@
+body {
+    background-color: #ffe4c4; /* kolor carne */
+}
+
+#container {
+    margin-top: 50px;
+    background-color: #fff; /* tło dla kontenera */
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #1877f2;
+    border-color: #1877f2;
+}
+
+.btn-primary:hover {
+    background-color: #166fe5;
+    border-color: #166fe5;
+}
+
+.form-check-input:checked {
+    background-color: #1877f2;
+    border-color: #1877f2;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.text-success {
+    color: #34b7f1;
+}
+
+.text-danger {
+    color: #f00;
+}
+
+h1 {
+    color: #fff; /* biały kolor tekstu */
+}

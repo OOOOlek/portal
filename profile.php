@@ -23,19 +23,53 @@ if(isset($_REQUEST['profileID'])) {
 ?>
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona główna</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Profil użytkownika</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+        }
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .profile-img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .profile-name {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .btn-primary {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+    </style>
 </head>
-
 <body>
-<h1>Profil użytkownika</h1>
-Imię i nazwisko: <?php echo $p->getFullName(); ?><br>
-
-Zdjęcie profilowe: <img src="<?php echo $p->getProfilePhotoURL(); ?>">
+    <div class="profile-container">
+        <h1>Profil użytkownika</h1>
+        <?php
+        // Sprawdzenie, czy zmienna $p została ustawiona
+        if(isset($p)) {
+            echo '<img src="' . $p->getProfilePhotoURL() . '" alt="Zdjęcie profilowe" class="profile-img">';
+            echo '<p class="profile-name">' . $p->getFullName() . '</p>';
+        } else {
+            echo '<p>Brak danych profilowych</p>';
+        }
+        ?>
+        <a href="index.php" class="btn btn-primary mt-3" style="background-color: #8a2be2;">Strona główna</a>
+    </div>
 </body>
 </html>

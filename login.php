@@ -18,50 +18,43 @@ if (isset($_REQUEST['email']) && isset($_REQUEST['password'])) {
 ?>
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularz logowania</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <div id="container">
-        <h1 class="text-center mt-5 mb-5">Zaloguj się:</h1>
-        <div id="loginForm" class="col-4 offset-4 mt-5">
+<body class="d-flex align-items-center justify-content-center" style="min-height: 100vh; background-color: #000;">
+    <div id="container" class="col-md-6" style="background-color: #000;">
+        <div class="text-center mb-5">
+            <h1 class="text-white">Zaloguj się</h1>
+        </div>
+        <div id="loginForm" class="mt-5">
             <form action="login.php" method="post">
-                <label for="emailInput" class="form-label">Adres e-mail:</label>
-                <input type="email" class="form-control mb-3" name="email" id="emailInput">
-
-                <label for="passwordInput" class="form-label">Hasło:</label>
-                <input type="password" class="form-control mb-3" name="password" id="passwordInput">
-
-                <button type="submit" class="btn btn-primary w-100 mt-3">Zaloguj</button>
-                
+                <div class="mb-3 d-flex justify-content-center">
+                    <input type="email" class="form-control w-50" name="email" placeholder="Adres e-mail">
+                </div>
+                <div class="mb-3 d-flex justify-content-center">
+                    <input type="password" class="form-control w-50" name="password" placeholder="Hasło">
+                </div>
+                <button type="submit" class="btn btn-primary w-50 d-block mx-auto" style="background-color: #8A2BE2;">Zaloguj</button>
             </form>
-                <a href="index.php">
-                <button class="btn btn-primary w-100 mt-3">Powrót</button>
-                </a>
+            <div class="text-center mt-3">
+                <a href="index.php" class="text-white">Powrót</a>
+            </div>
             <?php
             if (isset($result)) {
                 if ($result) {
-                    echo "Użytkownik zalogowany<br>";
-                    echo '<a href="index.php">Przejdź do głównej strony</a>';
-                    
+                    echo "<p class='text-success mt-3 text-center'>Użytkownik zalogowany</p>";
+                    echo '<p class="text-center"><a href="index.php" class="text-white">Przejdź do głównej strony</a></p>';
                 } else {
-                    echo "Użytkownik nie zalogowany";
+                    echo "<p class='text-danger mt-3 text-center'>Błąd logowania: Nieprawidłowy adres e-mail lub hasło</p>";
                 }
             }
-
             ?>
         </div>
     </div>
-    <?php
-    echo "<pre>";
-    var_dump($_SESSION);
-    ?>
 </body>
-
 </html>
