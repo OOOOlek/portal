@@ -52,3 +52,4 @@ if (isset($_REQUEST['email']) && isset($_REQUEST['password'])) {
     </div>
 </body>
 </html>
+>>>>>>>>> Temporary merge branch 2

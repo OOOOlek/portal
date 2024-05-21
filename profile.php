@@ -58,18 +58,9 @@ if(isset($_REQUEST['profileID'])) {
     </style>
 </head>
 <body>
-    <div class="profile-container">
-        <h1>Profil użytkownika</h1>
-        <?php
-        // Sprawdzenie, czy zmienna $p została ustawiona
-        if(isset($p)) {
-            echo '<img src="' . $p->getProfilePhotoURL() . '" alt="Zdjęcie profilowe" class="profile-img">';
-            echo '<p class="profile-name">' . $p->getFullName() . '</p>';
-        } else {
-            echo '<p>Brak danych profilowych</p>';
-        }
-        ?>
-        <a href="index.php" class="btn btn-primary mt-3" style="background-color: #8a2be2;">Strona główna</a>
-    </div>
+<h1>Profil użytkownika</h1>
+Imię i nazwisko: <?php echo $p->getFullName(); ?><br>
+
+Zdjęcie profilowe: <img src="<?php echo $p->getProfilePhotoURL(); ?>">
 </body>
 </html>
